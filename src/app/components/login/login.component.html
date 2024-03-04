@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body style="background-color: beige;">
+  
+    <div class="separator">
+      <hr class="line">
+      <span></span>
+      <hr class="line">
+    </div>
+    <form class="form_container" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+  
+        <div class="title_container">
+          <p class="title">Inicia Sesión</p>
+          <span class="subtitle">Por favor ingresa tus credenciales.</span>
+        </div>
+        <br>
+        <div class="input_container">
+          <label class="input_label" for="email_field">Email</label>
+          <input type="email" class="form-control" id="email_field" placeholder="name@example.com" formControlName="email" required>
+        </div>
+        <div class="input_container">
+          <label class="input_label" for="password_field">Password</label>
+          <input type="password" class="form-control" id="password_field" placeholder="Password" autocomplete="off" formControlName="password" required>
+        </div>
+        <input type="submit" value="Login">
+        <div class="separator">
+          <hr class="line">
+          <hr class="line">
+        </div>
+      </form>
+  </body>
+</html>
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': showErrorModal, 'd-block': showErrorModal}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Error</h5>
+        </div>
+        <div class="modal-body">
+          Los datos proporcionados no son válidos.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="showErrorModal = false;">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
